@@ -1,5 +1,5 @@
-<H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
+<H3>ENTER YOUR NAME: KEERTHANA S</H3>
+<H3>ENTER YOUR REGISTER NO: 212222230066</H3>
 <H3>EX. NO.1</H3>
 <H3>DATE</H3>
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
@@ -37,8 +37,48 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
-TYPE YOUR CODE HERE
+```
+#import libraries
+from google.colab import files
+import pandas as pd
+import io
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
 
+#Read the dataset from drive
+df = pd.read_csv('/content/Churn_Modelling.csv')
+print(df)
+#split the dataset
+X = df.iloc[:, :-1].values
+print(X)
+y = df.iloc[:, -1].values
+print(y)
+# Finding Missing Values
+print(df.isnull().sum())
+#Handling Missing values
+df.fillna(df.mean().round(1), inplace=True)
+print(df.isnull().sum())
+y = df.iloc[:, -1].values
+print(y)
+#Check for Duplicates
+df.duplicated()
+#Detect Outliers
+print(df['CreditScore'].describe())
+data=df.drop(['Surname','Geography','Gender'],axis=1)
+data.head()
+#When we normalize the dataset it brings the value of all the features between 0 and 1 so that all the columns are in the same range, and thus there is no dominant feature.
+scaler = MinMaxScaler()
+df1 = pd.DataFrame(scaler.fit_transform(data))
+print(df1)
+#splitting the data for training & Testing
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
+#'test_size=0.2' means 20% test data and 80% train data
+print(X_train)
+print(len(X_train))
+print(X_test)
+print(len(X_test))
+```py
 
 ## OUTPUT:
 SHOW YOUR OUTPUT HERE
