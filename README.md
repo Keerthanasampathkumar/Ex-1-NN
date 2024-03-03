@@ -38,7 +38,6 @@ STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
 ```
-
 #import libraries
 from google.colab import files
 import pandas as pd
@@ -81,8 +80,7 @@ print(X_train)
 print(len(X_train))
 print(X_test)
 print(len(X_test))
-
-```c
+```
 
 ## OUTPUT:
 ### Dataset:
