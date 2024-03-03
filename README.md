@@ -38,6 +38,7 @@ STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
 ```
+
 #import libraries
 from google.colab import files
 import pandas as pd
@@ -63,6 +64,8 @@ y = df.iloc[:, -1].values
 print(y)
 #Check for Duplicates
 df.duplicated()
+#check for Describe
+df.describe()
 #Detect Outliers
 print(df['CreditScore'].describe())
 data=df.drop(['Surname','Geography','Gender'],axis=1)
@@ -78,10 +81,36 @@ print(X_train)
 print(len(X_train))
 print(X_test)
 print(len(X_test))
-```py
+
+```c
 
 ## OUTPUT:
-SHOW YOUR OUTPUT HERE
+### Dataset:
+![data](https://github.com/Keerthanasampathkumar/Ex-1-NN/assets/119477890/7ab258e9-0e8a-48a0-b792-9d24e10f7f62)
+
+### X-values:
+![x value](https://github.com/Keerthanasampathkumar/Ex-1-NN/assets/119477890/5772166d-0016-4113-b718-d898503b3acf)
+
+### Y-values:
+![y value](https://github.com/Keerthanasampathkumar/Ex-1-NN/assets/119477890/6a96709e-5ef3-49ce-a288-f0699ece8f06)
+
+### Null values:
+![null value](https://github.com/Keerthanasampathkumar/Ex-1-NN/assets/119477890/5ab8c6f5-3b02-418c-9aa9-aaaa7e0f495a)
+
+### Duplicated Values:
+![duplicate value](https://github.com/Keerthanasampathkumar/Ex-1-NN/assets/119477890/61c05a78-f310-48ce-8310-8843e37fa5cd)
+
+### Description:
+![describe](https://github.com/Keerthanasampathkumar/Ex-1-NN/assets/119477890/874e7f71-52ea-4082-8b05-4e5a3a188f75)
+
+### Normalised dataset:
+![nominised data](https://github.com/Keerthanasampathkumar/Ex-1-NN/assets/119477890/5200349f-6c1d-4b85-935d-dc729b5f90eb)
+
+### Training data:
+![training data](https://github.com/Keerthanasampathkumar/Ex-1-NN/assets/119477890/cf3c87a4-fe36-44be-91c8-f5bba1a7ff52)
+
+### Test data:
+![test data](https://github.com/Keerthanasampathkumar/Ex-1-NN/assets/119477890/9c60fe44-3447-4e08-8a06-ec4a3873cab8)
 
 
 ## RESULT:
